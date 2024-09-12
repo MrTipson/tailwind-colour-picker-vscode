@@ -1,0 +1,60 @@
+{
+  "name": "tailwind-colour-picker",
+  "displayName": "hsl-convert-tailwind",
+  "description": "for tailwind's css variable declarations which are in HSL format - the hsl(). Provides the colour preview and color picker for tailwinds format",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.93.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "css",
+        "aliases": [
+          "CSS",
+          "css"
+        ],
+        "extensions": [
+          ".css"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [],
+    "colors": [
+      {
+        "id": "hslTailwindColor",
+        "description": "colour picker for tailwinds format",
+        "defaults": {
+          "light": "#000000",
+          "dark": "#ffffff",
+          "highContrast": "#000000"
+        }
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.93.0",
+    "@types/mocha": "^10.0.7",
+    "@types/node": "20.x",
+    "@typescript-eslint/eslint-plugin": "^8.3.0",
+    "@typescript-eslint/parser": "^8.3.0",
+    "eslint": "^9.9.1",
+    "typescript": "^5.5.4",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1"
+  }
+}
